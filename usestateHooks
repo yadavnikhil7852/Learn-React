@@ -1,0 +1,43 @@
+import { useState } from 'react'
+
+function App() {
+
+ let [counter ,setCounter] = useState(0)
+
+ //let counter = 5 
+  const addValue =()=>{
+    if (counter < 20){
+      counter = counter + 1
+    }
+    setCounter(counter)
+  }
+
+  const deleteValue =()=>{
+    if(counter >= 1){
+      counter = counter-1
+    }
+    setCounter(counter)
+  }
+  
+  return (
+    <>
+     <h1>chai aur react</h1>
+     <h2>Counter value {counter}</h2>
+     <button 
+     onClick={addValue}
+     >Increase value {counter}</button>
+     <br />
+     <button
+     onClick={ deleteValue}
+     >Decrease value{counter}</button>
+     <p>footer : {counter}</p>
+    </>
+  )
+}
+
+export default App
+
+//changes propogate kaise karaye jate h
+// useState hook
+//assignment -> value > 20 && value < 0
+//assingment completed
